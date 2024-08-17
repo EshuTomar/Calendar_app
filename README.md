@@ -1,6 +1,6 @@
 # React Calendar App
 
-A simple calendar application built with React that allows users to create, add, edit, and delete events. Event details are managed on a single page for ease of use.
+A simple calendar application built with React that allows users to add, edit, and delete events, view calendar. Event details are managed on a single page for ease of use.
 
 ## Features
 
