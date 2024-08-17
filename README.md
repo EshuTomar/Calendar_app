@@ -23,5 +23,5 @@ A simple calendar application built with React that allows users to add, edit, a
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/react-calendar-app.git
-   cd react-calendar-app
+   git clone https://github.com/EshuTomar/Calendar_app.git
+   cd Calendar_app
