@@ -3,7 +3,8 @@ import { FaCaretLeft } from "react-icons/fa";
 import { FaCaretRight } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { MdModeEditOutline } from "react-icons/md";
-import { RiMessage2Fill } from "react-icons/ri";
+import { MdDeleteForever } from "react-icons/md";
+
 
 const Calendar = () => {
   const daysInWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -79,14 +80,28 @@ const Calendar = () => {
 
   const handleEditEvent = (event) => {
     setSelectedDate(new Date(event.date));
+    const [hours, min] = event.time.split(":").map((timePart) => timePart.trim());
     setEventTime({
-      hours: event.time.split(":")[0],
-      min: event.time.split(":")[1],
+      hours,
+      min,
     });
     setEventText(event.text);
     setEditEvent(event);
     setShowEventPopup(true);
   };
+  
+
+  const handleDeleteEvent = (eventId) =>{
+    const updatedEvents = events.filter((event) =>
+    event.id != eventId)
+
+    setEvents(updatedEvents)
+  }
+
+  const handleTimeChange = (e) =>{
+    const {name, value} = e.target
+    setEventTime((prevTime) => ({...prevTime, [name]: value.padStart(2,'0')}))
+  }
 
   return (
     <div className='container'>
@@ -145,16 +160,18 @@ const Calendar = () => {
                   max={23}
                   className='hours'
                   value={eventTime.hours}
-                  onChange={(e) => setEventTime({ ...eventTime, hours: e.target.value })}
+                  // onChange={(e) => setEventTime({ ...eventTime, hours: e.target.value })}
+                  onChange={handleTimeChange}
                 />
                 <input
                   type='number'
-                  name='minutes'
+                  name='min'
                   min={0}
                   max={59}
                   className='mins'
                   value={eventTime.min}
-                  onChange={(e) => setEventTime({ ...eventTime, min: e.target.value })}
+                  // onChange={(e) => setEventTime({ ...eventTime, min: e.target.value })}
+                  onChange={handleTimeChange}
                 />
               </div>
               <textarea
@@ -166,7 +183,9 @@ const Calendar = () => {
                   }
                 }}
               ></textarea>
-              <button className='event-popup-btn' onClick={handleEventSubmit}>Add an event</button>
+              <button className='event-popup-btn' onClick={handleEventSubmit}>
+                {editEvent ? "Update Event" : "Add event"}
+              </button>
               <button className='close-event-popup' onClick={() => setShowEventPopup(false)}>
                 <IoMdCloseCircleOutline />
               </button>
@@ -181,7 +200,7 @@ const Calendar = () => {
               <div className='event-text'>{event.text}</div>
               <div className='event-btn'>
                 <MdModeEditOutline className='ic' onClick={() => handleEditEvent(event)} />
-                <RiMessage2Fill className='ic' />
+                <MdDeleteForever className='ic' onClick={() => handleDeleteEvent(event.id)}/>
               </div>
             </div>
           ))}
