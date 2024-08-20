@@ -95,8 +95,8 @@
     padding: 3rem 0;
 }
 .event-popup{
-    display: none;
-    /* position: absolute;
+    /* display: none; */
+    position: absolute;
     top: 38%;
     left: 3rem;
     width: clamp(25rem, 21cqi,40rem );
@@ -108,7 +108,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 2rem; */
+    row-gap: 2rem;
 }
 .time-input{
     display: flex;
