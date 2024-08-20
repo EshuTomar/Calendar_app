@@ -95,14 +95,76 @@
     padding: 3rem 0;
 }
 .event-popup{
-    /* display: none; */
-    position: absolute;
-    top: 40%;
-    left: 37%;
-    width: clapm(25rem, 21cqi,40rem );
-    background-color: #937f6b;
-    aspect-ratio: 4/3
+    display: none;
+    /* position: absolute;
+    top: 38%;
+    left: 3rem;
+    width: clamp(25rem, 21cqi,40rem );
+    background-color: #d89766;
+    aspect-ratio: 10/9;
+    border-radius: 1rem;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem; */
+}
+.time-input{
+    display: flex;
+    column-gap: 1rem;
+}
+.event-popup-time{
+    width: clamp(4rem, 4cqi, 7rem);
+    background-color: rgb(108, 170, 149);
+    font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.time-input input{
+    background-color: transparent;
+    /* border: none; */
+    /* border-top: .2rem solid rgba(51, 103, 235, 0.977);
+    border-bottom: .2rem solid rgba(51, 103, 235, 0.977);; */
+    font-size: clamp(1.2rem, 1.2cqi, 1.6rem);
+    
+    text-align: center;
+}
+
+.time-input input[type="number"]::-webkit-outer-spin-button,
+.time-input input[type="number"]::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.event-popup textarea{
+    width: clamp(15rem,15cqi, 25rem);
+    aspect-ratio: 5/2;
+    resize: none;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.event-popup-btn{
+    width: clamp(15rem, 15cqi, 25rem);
+    height: 4rem;
+    font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+    border: none;
+    cursor: pointer;
+    
+    background-color: rgb(129, 160, 97);
+}
+
+.close-event-popup{
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2.5rem;
 }
 
 .event{
