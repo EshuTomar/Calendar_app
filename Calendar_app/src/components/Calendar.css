@@ -83,10 +83,11 @@
     /* text-shadow: 0 .5rem 1rem rgba(0,0,0,0.5); */
 }
 .curr-date{
-    background-color: rgb(99, 189, 190);
-    /* border-radius: 50%;
+    background-color: rgb(191, 44, 71);
+    border-radius: 50%;
+    color: aliceblue;
     
-    */
+   
 }
 
 .events{
@@ -123,7 +124,10 @@
     align-items: center;
 
 }
-
+.event-day {
+    background-color:  rgb(129, 160, 97);
+    border-radius: 50%;
+}
 .time-input input{
     background-color: transparent;
     /* border: none; */
@@ -154,7 +158,7 @@
     border: none;
     cursor: pointer;
     
-    background-color: rgb(129, 160, 97);
+    background-color: rgb(119, 158, 79);
 }
 
 .close-event-popup{
